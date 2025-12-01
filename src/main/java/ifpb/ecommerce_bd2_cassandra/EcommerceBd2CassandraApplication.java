@@ -8,6 +8,8 @@ public class EcommerceBd2CassandraApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(EcommerceBd2CassandraApplication.class, args);
+
+
     }
 
 }
