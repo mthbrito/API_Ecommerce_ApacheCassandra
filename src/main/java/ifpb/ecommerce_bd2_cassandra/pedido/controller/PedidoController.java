@@ -1,9 +1,6 @@
 package ifpb.ecommerce_bd2_cassandra.pedido.controller;
 
-import ifpb.ecommerce_bd2_cassandra.pedido.dto.PedidoPorClienteResponseDTO;
-import ifpb.ecommerce_bd2_cassandra.pedido.dto.PedidoPorStatusResponseDTO;
-import ifpb.ecommerce_bd2_cassandra.pedido.dto.PedidoRequestDTO;
-import ifpb.ecommerce_bd2_cassandra.pedido.dto.ProdutoPorPedidoResponseDTO;
+import ifpb.ecommerce_bd2_cassandra.pedido.dto.*;
 import ifpb.ecommerce_bd2_cassandra.pedido.service.PedidoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +20,7 @@ public class PedidoController {
     }
 
     @PostMapping
-    public ResponseEntity<PedidoRequestDTO> cadastrarPedido(@RequestBody PedidoRequestDTO pedidoRequestDTO) {
+    public ResponseEntity<PedidoResponseDTO> cadastrarPedido(@RequestBody PedidoRequestDTO pedidoRequestDTO) {
         return ResponseEntity.status(HttpStatus.CREATED).body(pedidoService.cadastrarPedido(pedidoRequestDTO));
     }
 

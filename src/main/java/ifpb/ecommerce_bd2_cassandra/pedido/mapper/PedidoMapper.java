@@ -34,50 +34,50 @@ public class PedidoMapper {
         );
     }
 
-    public static ProdutoPorPedidoResponseDTO toProdutoPorPedidoResponseDTO(ProdutosPorPedido produtosPorPedido) {
-        return new  ProdutoPorPedidoResponseDTO(
-                produtosPorPedido.getProdutosPorPedidoKey().getProdutoId(),
-                produtosPorPedido.getQuantidade(),
-                produtosPorPedido.getPreco()
-        );
-    }
+//    public static ProdutoPorPedidoResponseDTO toProdutoPorPedidoResponseDTO(ProdutosPorPedido produtosPorPedido) {
+//        return new  ProdutoPorPedidoResponseDTO(
+//                produtosPorPedido.getProdutosPorPedidoKey().getProdutoId(),
+//                produtosPorPedido.getQuantidade(),
+//                produtosPorPedido.getPreco()
+//        );
+//    }
 
-    public static PedidosPorCliente toPedidosPorCliente(UUID clienteId, PedidoRequestDTO pedidoRequestDTO) {
+    public static PedidosPorCliente toPedidosPorCliente(UUID clienteId, UUID pedidoId, Instant dataPedido, PedidoRequestDTO pedidoRequestDTO) {
         PedidosPorClienteKey pedidosPorClienteKey = new PedidosPorClienteKey(
                 clienteId,
-                UUID.randomUUID()
+                pedidoId
         );
         return new PedidosPorCliente(
                 pedidosPorClienteKey,
-                Instant.now(),
+                dataPedido,
                 pedidoRequestDTO.status(),
                 pedidoRequestDTO.total()
         );
     }
 
-    public static PedidosPorStatus toPedidosPorStatus(PedidoRequestDTO pedidoRequestDTO) {
+    public static PedidosPorStatus toPedidosPorStatus(UUID pedidoId, Instant dataPedido, PedidoRequestDTO pedidoRequestDTO) {
         PedidosPorStatusKey pedidosPorStatusKey =  new PedidosPorStatusKey(
                 pedidoRequestDTO.status(),
-                UUID.randomUUID()
+                pedidoId
         );
         return new PedidosPorStatus(
                 pedidosPorStatusKey,
-                Instant.now(),
+                dataPedido,
                 pedidoRequestDTO.clienteId()
         );
     }
 
-    public static ProdutosPorPedido toProdutosPorPedido(UUID pedidoId, ProdutoRequestDTO ProdutoRequestDTO) {
-        ProdutosPorPedidoKey ProdutosPorPedidoKey =  new ProdutosPorPedidoKey(
-                pedidoId,
-                UUID.randomUUID()
-        );
-        return new ProdutosPorPedido(
-                ProdutosPorPedidoKey,
-                ProdutoRequestDTO.quantidade(),
-                ProdutoRequestDTO.preco()
-        );
-    }
+//    public static ProdutosPorPedido toProdutosPorPedido(UUID pedidoId, ProdutoRequestDTO ProdutoRequestDTO) {
+//        ProdutosPorPedidoKey ProdutosPorPedidoKey =  new ProdutosPorPedidoKey(
+//                pedidoId,
+//                UUID.randomUUID()
+//        );
+//        return new ProdutosPorPedido(
+//                ProdutosPorPedidoKey,
+//                ProdutoRequestDTO.quantidade(),
+//                ProdutoRequestDTO.preco()
+//        );
+//    }
 }
 
 

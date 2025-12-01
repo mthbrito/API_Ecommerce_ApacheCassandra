@@ -14,10 +14,8 @@ import java.util.UUID;
 @Data
 @PrimaryKeyClass
 public class PedidosPorClienteKey {
-
     @PrimaryKeyColumn(name = "cliente_id", type = PrimaryKeyType.PARTITIONED)
     private UUID clienteId;
     @PrimaryKeyColumn(name = "pedido_id", type = PrimaryKeyType.CLUSTERED)
     private UUID pedidoId;
-
 }

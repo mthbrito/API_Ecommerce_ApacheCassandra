@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("api/ecommerce/clientes")
 public class ClienteController {
 
-    @PostMapping
-    public ResponseEntity<ClienteRequestDTO> cadastrarCliente(@RequestBody ClienteRequestDTO clienteRequestDTO) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(clienteService.cadastrarCliente(clienteRequestDTO));
-    }
+//    @PostMapping
+//    public ResponseEntity<ClienteRequestDTO> cadastrarCliente(@RequestBody ClienteRequestDTO clienteRequestDTO) {
+//        return ResponseEntity.status(HttpStatus.CREATED).body(clienteService.cadastrarCliente(clienteRequestDTO));
+//    }
 }
